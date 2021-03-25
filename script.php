@@ -22,7 +22,7 @@
         for ($i = 0; $i<count($data); $i++){ 
             if ($data[$i]!='') $res .= getTR($data[$i]); 
         }
-        if (count($data)==0) echo 'Ошибка! В таблице нет строк.';
+        if (count($data)==0 or (count($data)==1 and strlen($data[0])==0)) echo 'Ошибка! В таблице нет строк.';
         else if ($res=='') echo 'Ошибка! В таблице нет строк с ячейками.';
         else echo '<table>'.$res.'</table>';
     }
